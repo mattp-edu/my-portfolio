@@ -1,12 +1,18 @@
 * {
   box-sizing: border-box;
 }
+:root{
+  --bgcolor: rgb(48, 48, 48);
+  --theme-color: rgb(92, 0, 0);
+  --theme-border-color: rgb(128, 0, 0);
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+  background-color: var(--bgcolor);
 }
 
 h1,
@@ -20,4 +26,82 @@ h6 {
 
 p {
   margin: 0;
+}
+
+/* header & navigation menu */
+header {
+  display: flex;
+  background-color: var(--theme-color);
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  height: 4.5rem;
+}
+header h1 {
+  background-color: black;
+  width: 15rem;
+  text-align: end;
+  padding-right: 0.7rem;
+}
+header nav ul li {
+  display: inline;
+  margin: 0 0.3rem;
+  transition: 0.7s ease;
+  font-size: 1rem;
+}
+header nav ul li:hover {
+  color: rgb(201, 13, 0);
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
+
+/* hero */
+.hero-banner {
+  background-color: var(--bgcolor);
+  background-image: url(../images/02-hero-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.2rem solid var(--theme-border-color);
+  height: 14rem;
+  position: relative;
+}
+.hero-banner div {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 2rem;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  width: 17rem;
+  text-align: end;
+}
+
+/* about me section */
+
+/* work section */
+
+/* contact me section */
+
+/* mobile */
+@media only screen and (max-width: 600px){
+  header nav {
+    display: none;
+  }
+  .hero-banner {
+    display: none;
+  }
+}
+/* tablet */
+@media only screen and (max-width: 768px){
+  .hero-banner {
+    height: 8rem;
+  }
+  .hero-banner div {
+    bottom: 0;
+    right: 0;
+    width: 14rem;
+  }
 }
