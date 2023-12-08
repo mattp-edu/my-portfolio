@@ -79,8 +79,37 @@ header nav ul li:hover {
   text-align: end;
 }
 
+/* blades */
+.page-wrapper {
+  margin: 0 auto;
+  /* max-width: 1200px; */
+}
+.page-section {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 20% 80%;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+.page-section h2 {
+  color: white;
+  font-size: 2rem;
+  border-right: 0.5rem solid var(--theme-border-color);
+  border-radius: 0.2rem;
+  padding-right: 1rem;
+  text-align: right;
+}
+.page-section div {
+  display: inline-block;
+}
 /* about me section */
 
+#about div {
+  color: lightgray;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+}
 /* work section */
 
 /* contact me section */
@@ -93,6 +122,7 @@ header nav ul li:hover {
   .hero-banner {
     display: none;
   }
+
 }
 /* tablet */
 @media only screen and (max-width: 768px){
@@ -103,5 +133,16 @@ header nav ul li:hover {
     bottom: 0;
     right: 0;
     width: 14rem;
+  }
+  .page-section {
+    grid-template-columns: auto;
+    margin-top: 0.5rem;
+  }
+  .page-section h2 {
+    border: none;
+    border-bottom: 0.4rem solid var(--theme-border-color);
+    width: 12rem;
+    text-align: center;
+    margin: 0 auto;
   }
 }
