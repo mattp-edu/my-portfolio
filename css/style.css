@@ -23,8 +23,10 @@ h5,
 h6 {
   margin: 0;
 }
-
 p {
+  margin: 0;
+}
+figure {
   margin: 0;
 }
 
@@ -89,7 +91,6 @@ header nav ul li:hover {
   max-width: 1200px;
   grid-template-columns: 20% 80%;
   margin: 1rem auto;
-  gap: 1rem;
 }
 .page-section h2 {
   color: white;
@@ -99,8 +100,9 @@ header nav ul li:hover {
   padding-right: 1rem;
   text-align: right;
 }
+
 .page-section div {
-  display: inline-block;
+  margin: 0 1rem;
 }
 /* about me section */
 
@@ -112,6 +114,38 @@ header nav ul li:hover {
 }
 /* work section */
 
+.workItemList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.card{
+  height: 15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.4rem solid var(--theme-border-color);
+}
+.featured {
+  grid-column: 1 / span 2;
+}
+#card1 {
+  background-image: url(../images/02-portfolio-1.jpg);
+}
+#card2 {
+  background-image: url(../images/02-portfolio-2.jpg);
+}
+#card3 {
+  background-image: url(../images/02-portfolio-3.jpg);
+}
+#card4 {
+  background-image: url(../images/02-portfolio-4.jpg);
+}
+#card5 {
+  background-image: url(../images/02-run-buddy.jpg);
+}
+
 /* contact me section */
 
 /* mobile */
@@ -122,7 +156,12 @@ header nav ul li:hover {
   .hero-banner {
     display: none;
   }
-
+  .workItemList{
+    grid-template-columns: 100%;
+  }
+  .featured {
+    grid-column: auto;
+  }
 }
 /* tablet */
 @media only screen and (max-width: 768px){
@@ -144,5 +183,8 @@ header nav ul li:hover {
     width: 12rem;
     text-align: center;
     margin: 0 auto;
+  }
+  .page-section div {
+    margin: 1rem 1rem;
   }
 }
