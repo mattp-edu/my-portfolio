@@ -59,6 +59,11 @@ header nav ul li:hover {
   font-size: 1.1rem;
 }
 
+header a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 /* hero */
 .hero-banner {
   background-color: var(--bgcolor);
@@ -167,6 +172,24 @@ header nav ul li:hover {
 
 /* contact me section */
 
+.contact-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contact-text {
+  color: white;
+  font-size: medium;
+  border-left: 0.3rem white solid;
+  padding: 0 0.5rem;
+}
+
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
 /* mobile */
 @media only screen and (max-width: 600px){
   header nav {
@@ -208,5 +231,11 @@ header nav ul li:hover {
   }
   .card .transbox {
     backdrop-filter: none;
+  }
+  .contact-flex {
+    flex-direction: column;
+  }
+  .contact-text {
+    margin: 0.7rem auto;
   }
 }
