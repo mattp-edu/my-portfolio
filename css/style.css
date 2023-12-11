@@ -1,12 +1,18 @@
 * {
   box-sizing: border-box;
 }
+:root{
+  --bgcolor: rgb(48, 48, 48);
+  --theme-color: rgb(92, 0, 0);
+  --theme-border-color: rgb(128, 0, 0);
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+  background-color: var(--bgcolor);
 }
 
 h1,
@@ -17,7 +23,219 @@ h5,
 h6 {
   margin: 0;
 }
-
 p {
   margin: 0;
+}
+figure {
+  margin: 0;
+}
+
+/* header & navigation menu */
+header {
+  display: flex;
+  background-color: var(--theme-color);
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  height: 4.5rem;
+}
+header h1 {
+  background-color: black;
+  width: 15rem;
+  text-align: end;
+  padding-right: 0.7rem;
+}
+header nav ul li {
+  display: inline;
+  margin: 0 0.3rem;
+  transition: 0.7s ease;
+  font-size: 1rem;
+}
+header nav ul li:hover {
+  color: rgb(201, 13, 0);
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
+
+header a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+/* hero */
+.hero-banner {
+  background-color: var(--bgcolor);
+  background-image: url(../images/02-hero-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.2rem solid var(--theme-border-color);
+  height: 14rem;
+  position: relative;
+}
+.hero-banner div {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 2rem;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  width: 17rem;
+  text-align: end;
+}
+
+/* blades */
+.page-wrapper {
+  margin: 0 auto;
+  /* max-width: 1200px; */
+}
+.page-section {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 20% 80%;
+  margin: 1rem auto;
+}
+.page-section h2 {
+  color: white;
+  font-size: 2rem;
+  border-right: 0.5rem solid var(--theme-border-color);
+  border-radius: 0.2rem;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+.page-section > div {
+  margin: 0 1rem;
+}
+/* about me section */
+
+#about div {
+  color: lightgray;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+}
+/* work section */
+
+.workItemList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.card{
+  height: 15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.4rem solid var(--theme-border-color);
+}
+.card .transbox {
+  position: relative;
+  backdrop-filter: blur(0.15rem);
+  height: 100%;
+  margin: 0;
+  /* background-color: white; */
+  transition: 0.1s ease;
+}
+.card .transbox:hover{
+  backdrop-filter: none;
+}
+
+.cardtext {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 0.5rem;
+  width: fit-content;
+  padding: 0 3rem 0 1rem;
+}
+
+.featured {
+  grid-column: 1 / span 2;
+}
+#card1 {
+  background: url(../images/02-portfolio-1.jpg);
+}
+#card2 {
+  background-image: url(../images/02-portfolio-2.jpg);
+}
+#card3 {
+  background-image: url(../images/02-portfolio-3.jpg);
+}
+#card4 {
+  background-image: url(../images/02-portfolio-4.jpg);
+}
+#card5 {
+  background-image: url(../images/02-run-buddy.jpg);
+}
+
+/* contact me section */
+
+.contact-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contact-text {
+  color: white;
+  font-size: medium;
+  border-left: 0.3rem white solid;
+  padding: 0 0.5rem;
+}
+
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
+/* mobile */
+@media only screen and (max-width: 600px){
+  header nav {
+    display: none;
+  }
+  .hero-banner {
+    display: none;
+  }
+  .workItemList{
+    grid-template-columns: 100%;
+  }
+  .featured {
+    grid-column: auto;
+  }
+}
+/* tablet */
+@media only screen and (max-width: 768px){
+  .hero-banner {
+    height: 8rem;
+  }
+  .hero-banner div {
+    bottom: 0;
+    right: 0;
+    width: 14rem;
+  }
+  .page-section {
+    grid-template-columns: auto;
+    margin-top: 0.5rem;
+  }
+  .page-section h2 {
+    border: none;
+    border-bottom: 0.4rem solid var(--theme-border-color);
+    width: 12rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .page-section > div {
+    margin: 1rem 1rem;
+  }
+  .card .transbox {
+    backdrop-filter: none;
+  }
+  .contact-flex {
+    flex-direction: column;
+  }
+  .contact-text {
+    margin: 0.7rem auto;
+  }
 }
